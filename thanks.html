@@ -58,8 +58,7 @@
             <div class="header-content-inner">
                 <h1>Mr.Translator</h1>
                 <hr>
-                <p>ご注文ありがとうございました。<br> Paypalのページへ自動的に遷移します。<br><br>自動遷移しない方は<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7NMPD8RM2E99N">こちら</a>から</p>
-                <!-- <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a> -->
+                <p>ご注文ありがとうございました。<br> Paypalのページへ自動的に遷移します。<br><br>自動遷移しない方は<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WFNE8RJPQ4ULW">こちら</a>から</p>
             </div>
         </div>
     </header>
@@ -78,49 +77,6 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/creative.js"></script>
-
-    <script>
-    $(function(){
-
-    //カウントするフィールドを監視
-    $("#count_area").keyup(function(){
-
-        //現在入力されている文字
-        var text = $(this).val();
-
-        //正確にカウントするため改行コード削除
-        text = text.replace((new RegExp("\r\n","g")),"");
-        text = text.replace((new RegExp("\n","g")),"");
-
-        //現在の文字数
-        var count = text.length;
-
-        //管理者が設定した上限文字数
-        var moji_limit = $(this).attr("limit");
-
-        //文字数をリアルタイムの表示
-        $("#moji_suu").text(count);
-
-        //処理分け
-        if(count == 0){
-
-            //字を消して0文字となった場合。
-            $("#moji_suu").text("0");
-
-        } else if(count > moji_limit) {
-
-            //上限文字数を超えたら赤色表示
-            $("#moji_suu").css("color", "red");
-
-        } else {
-
-            //文字数が範囲内なら色を戻す
-            $("#moji_suu").css("color", "");
-
-        }
-    });
-});
-</script>
 
 </body>
 
