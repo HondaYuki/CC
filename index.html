@@ -165,9 +165,8 @@
                             <form id="form_01" method="post" action="mail.php">
                                 <input type="text" name="お名前" placeholder="お名前" class="validate[required]">
                                 <input type="email" name="Email" placeholder="メールアドレス" class="validate[required]">
-                                <textarea name="ご注文内容" id="count_area" placeholder="翻訳したい文章を入れてください（400文字まで）" maxlength="400" class="validate[required]"></textarea>
+                                <textarea name="ご注文内容" id="count_area" placeholder="翻訳したい文章を入れてください（400文字まで）"  limit="400" class="validate[required]"></textarea>
                                 <br>現在の文字数：<span id="moji_suu">0</span>
-                                <p>※申し訳ございません。スペースや改行も1文字にカウントされてしまうので、<br>400文字以下でも入力できなくなることがあります。すぐに改修します。</p>
                                 <br>
                                 <br>
                                 <br>
@@ -292,7 +291,7 @@
                     <p>申し訳ございません。現在は日本語から英語のみの翻訳になります。2016年1月に英語から日本語への翻訳、2016年4月には日本語から中国語への翻訳に対応する予定です。</p>
                     <br />
                     <h3>長い文章を翻訳したい。</h3>
-                    <p>申し訳ございません。現在は400文字で¥1,000のパッケージのみでのご提供になります。ご希望の方別途ページ下部の「お問い合わせ」からご連絡ください</p>
+                    <p>申し訳ございません。現在は400文字で¥1,000のパッケージのみでのご提供になります。ご希望の方は別途ページ下部の「お問い合わせ」からご連絡ください</p>
                     <br />
                     <h3>翻訳者を指名（固定）したい</h3>
                     <p>海外とのメールのやりとりなどで、これまでの文脈と返信の早さが重要になることもあるかと思います。割増料金になりますが、そういった要望も積極的に応えていきたいと思いますので、ページ下部の「お問い合わせ」からご連絡ください。</p>
@@ -428,48 +427,97 @@
     <!-- Custom Theme JavaScript -->
     <script src="js/creative.js"></script>
 
-    <script>
-    $(function(){
-
-    //カウントするフィールドを監視
-    $("#count_area").keyup(function(){
-
-        //現在入力されている文字
-        var text = $(this).val();
-
-        //正確にカウントするため改行コード削除
-        text = text.replace((new RegExp("\r\n","g")),"");
-        text = text.replace((new RegExp("\n","g")),"");
-
-
-        //現在の文字数
-        var count = text.length;
-
-        //管理者が設定した上限文字数
-        var moji_limit = $(this).attr("limit");
-
-        //文字数をリアルタイムの表示
-        $("#moji_suu").text(count);
-
-        //処理分け
-        if(count == 0){
-
+//keyupイベント
+<script>
+    setInterval( function() {
+    
+        //カウントするフィールドを監視
+        $("#count_area").keyup(function(){
+        
+            //現在入力されている文字
+            var text = $(this).val();
+        
+            //正確にカウントするため改行コード削除
+            text = text.replace((new RegExp("\r\n","g")),"");
+            text = text.replace((new RegExp("\n","g")),"");
+        
+            //現在の文字数
+            var count = text.length;
+        
+            //管理者が設定した上限文字数
+            var moji_limit = $(this).attr("limit");
+        
+            //文字数をリアルタイムの表示
+            $("#moji_suu").text(count);
+        
+            //処理分け
+            if(count == 0){
+        
             //字を消して0文字となった場合。
             $("#moji_suu").text("0");
-
-        } else if(count > moji_limit) {
-
+            } 
+            else if(count > moji_limit) {
+            
             //上限文字数を超えたら赤色表示
             $("#moji_suu").css("color", "red");
+            } 
+            else {
+            //文字数が範囲内なら色を戻す
+            
+            $("#moji_suu").css("color", "");
+            }
+                if (text.length > moji_limit) {
+                text = text.substr(0, 400);
+                $(this).val(text);
+                }
+        });
+    }, 100 );
+</script>
 
-        } else {
-
+//changeイベント
+<script>
+    setInterval( function() {
+    
+        //カウントするフィールドを監視
+        $("#count_area").change(function(){
+    
+            //現在入力されている文字
+            var text = $(this).val();
+    
+            //正確にカウントするため改行コード削除
+            text = text.replace((new RegExp("\r\n","g")),"");
+            text = text.replace((new RegExp("\n","g")),"");
+        
+            //現在の文字数
+            var count = text.length;
+        
+            //管理者が設定した上限文字数
+            var moji_limit = $(this).attr("limit");
+        
+            //文字数をリアルタイムの表示
+            $("#moji_suu").text(count);
+        
+            //処理分け
+            if(count == 0){
+        
+            //字を消して0文字となった場合。
+            $("#moji_suu").text("0");
+            } 
+            else if(count > moji_limit) {
+            //上限文字数を超えたら赤色表示
+            $("#moji_suu").css("color", "red");
+            } 
+            else {
             //文字数が範囲内なら色を戻す
             $("#moji_suu").css("color", "");
-
-        }
-    });
-});
+            }
+            
+                if (text.length > moji_limit) {
+                text = text.substr(0, 400);
+                $(this).val(text);
+            }
+        });
+    }, 100 );
 </script>
 
 
