@@ -163,7 +163,3 @@ input::selection,
 textarea::selection {
   color: #000;
 }
-
-#example{
-    margin-top: -100px;
-}
