@@ -3,6 +3,11 @@
     text-shadow: 5px 5px 1px #999999;
 }
 
+.header-content-inner h2{
+    font-family: 'Chewy', cursive;
+    text-shadow: 5px 5px 1px #999999;
+}
+
 header .header-content .header-content-inner p {
     font-size: 26px;
     font-weight: bold;
@@ -101,6 +106,10 @@ header .header-content .header-content-inner p {
 .form-style-6 textarea{
     height: 250px;
 }
+
+.listing-01 textarea  {
+    height: 125px;
+}
 </style>
 
 
@@ -163,3 +172,9 @@ input::selection,
 textarea::selection {
   color: #000;
 }
+
+.listing-name{
+    height: 100px;
+}
+
+
