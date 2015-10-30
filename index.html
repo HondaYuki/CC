@@ -83,13 +83,13 @@
                         <a class="page-scroll" href="#service">Mr.Translatorについて</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#example">翻訳例</a>
-                    </li>
-                    <li>
                         <a class="page-scroll" href="#howtouse">使い方</a>
-                    </li>
+                    </li>                    
                     <li>
                         <a class="page-scroll" href="#order">注文</a>
+                    </li>                    
+                    <li>
+                        <a class="page-scroll" href="#example">翻訳例</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#faq">よくある質問</a>
@@ -131,25 +131,26 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 text-center">
+                <div class="col-lg-4 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-thumbs-o-up wow bounceIn text-primary"></i>
                         <h3>品質は？</h3>
-                        <p>まずは<a class="page-scroll" href="#example">翻訳例</a>をご確認頂き、お客様ご自身でご判断ください。</p>
+                        <p>翻訳者は全員帰国子女のチームです。<br>
+                        <a class="page-scroll" href="#example">翻訳例</a>をご確認頂けます。</p>
                     </div>
                     <br>
                 </div>
 
-                <div class="col-lg-3 text-center">
+                <div class="col-lg-4 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-jpy wow bounceIn text-primary" data-wow-delay=".1s"></i>
                         <h3>コストは？</h3>
-                        <p>業界最安値のサービスです。どうぞ比べてみてください。</p>
+                        <p>業界最安値のサービスです。</p>
                     </div>
                     <br>
                 </div>
 
-                <div class="col-lg-3 text-center">
+                <div class="col-lg-4 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-truck wow bounceIn text-primary" data-wow-delay=".2s"></i>
                         <h3>納期は？</h3>
@@ -157,23 +158,78 @@
                     </div>
                     <br>
                 </div>
+            </div>
+                <br><br>
+        </div>
+    </section>
 
-                <div class="col-lg-3 text-center">
+
+    <section id="howtouse" class="bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">使い方 - How to use</h2>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 text-center">
                     <div class="service-box">
-                        <i class="fa fa-4x fa-users wow bounceIn text-primary" data-wow-delay=".2s"></i>
-                        <h3>チームは？</h3>
-                        <p>翻訳者は全員帰国子女のネイティブのチームです。</p>
+                        <i class="fa fa-4x fa-envelope-o wow bounceIn text-primary"></i>
+                        <h3>1.メッセージを送る</h3>
+                        <p>下記のフォームから翻訳したい日本語のテキストを送る。（400文字まで）</p>
+                    </div>
+                <br>
+                </div>
+
+                <div class="col-lg-4 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-credit-card wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                        <h3>2.お支払いはクレジットカードで</h3>
+                        <p>決済サービスPaypalを利用しております。Paypalのアカウントがなくても決済可能です。</p>
+                    </div>
+                <br>
+                </div>
+
+                <div class="col-lg-4 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-clock-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
+                        <h3>3.メールで納品</h3>
+                        <p>登録したメールアドレス宛てに翻訳されたメッセージが届きます。</p>
                     </div>
                 </div>
             </div>
-                <br><br>
-            <div class="row">
-                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h3 class="large">Mr.Translatorについて興味を持ったら、<a class="page-scroll" href="#example">翻訳例</a>を見てみよう！</h3>
-                </div>
-            <div>
+            <br><br>
         </div>
     </section>
+
+    <section id="order">
+            <div class="container text-center">
+                <div class="call-to-action">
+                    <h2>注文  - Order</h2>
+                    <h2>料金：¥500（トライアル期間）<br>400文字まで（日 → 英）</h2>
+                    <br>
+                        <div class="col-lg-12 col-md-12 form-style-6">
+
+                            <form id="form_01" method="post" action="mail.php">
+                                <input type="text" name="お名前" placeholder="お名前" class="validate[required]">
+                                <input type="email" name="Email" placeholder="メールアドレス" class="validate[required]">
+                                <textarea name="ご注文内容" id="count_area" placeholder="翻訳したい文章を入れてください（400文字まで）"  limit="400" class="validate[required]"></textarea>
+                                <br>現在の文字数：<span id="moji_suu">0</span>
+                                <br>
+                                <br>
+                                <br>
+                                    <input type="submit" value="決済手続きに進む" />
+                            </form>
+                            <br><br>
+                            </form>
+                        </div>
+                </div>
+            </div>
+    </section>
+
 
     <section id="example" class="bg-dark">
         <aside class="bg-dark">
@@ -238,83 +294,6 @@
                 </div>
             </div>
             <br><br>
-             <div class="row">
-                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h3 class="large">なんとなくの品質に納得できたら<a class="page-scroll" href="#howtouse">使い方</a>を見てみよう！</h3>
-                </div>
-            <div>
-    </section>
-
-
-    <section id="howtouse">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">使い方 - How to use</h2>
-                    <br>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-envelope-o wow bounceIn text-primary"></i>
-                        <h3>1.メッセージを送る</h3>
-                        <p>下記のフォームから翻訳したい日本語のテキストを送る。（400文字まで）</p>
-                    </div>
-                <br>
-                </div>
-
-                <div class="col-lg-4 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-credit-card wow bounceIn text-primary" data-wow-delay=".1s"></i>
-                        <h3>2.お支払いはクレジットカードで</h3>
-                        <p>決済サービスPaypalを利用しております。Paypalのアカウントがなくても決済可能です。</p>
-                    </div>
-                <br>
-                </div>
-
-                <div class="col-lg-4 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-clock-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
-                        <h3>3.メールで納品</h3>
-                        <p>登録したメールアドレス宛てに翻訳されたメッセージが届きます。</p>
-                    </div>
-                </div>
-            </div>
-            <br><br>
-            <div class="row">
-                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h3 class="large">使い方がわかったら、<a class="page-scroll" href="#order">注文</a>してみよう！</h3>
-                </div>
-            <div>
-        </div>
-    </section>
-
-    <section id="order" class="bg-dark">
-            <div class="container text-center">
-                <div class="call-to-action">
-                    <h2>注文  - Order</h2>
-                    <h2>料金：¥500（トライアル期間）<br>400文字まで（日 → 英）</h2>
-                    <br>
-                        <div class="col-lg-12 col-md-12 form-style-6">
-
-                            <form id="form_01" method="post" action="mail.php">
-                                <input type="text" name="お名前" placeholder="お名前" class="validate[required]">
-                                <input type="email" name="Email" placeholder="メールアドレス" class="validate[required]">
-                                <textarea name="ご注文内容" id="count_area" placeholder="翻訳したい文章を入れてください（400文字まで）"  limit="400" class="validate[required]"></textarea>
-                                <br>現在の文字数：<span id="moji_suu">0</span>
-                                <br>
-                                <br>
-                                <br>
-                                    <input type="submit" value="決済手続きに進む" />
-                            </form>
-                            <br><br>
-                            </form>
-                        </div>
-                </div>
-            </div>
     </section>
 
     <section id="faq">
