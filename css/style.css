@@ -177,4 +177,6 @@ textarea::selection {
     height: 100px;
 }
 
-
+.position-right{
+    text-align: right;
+}
