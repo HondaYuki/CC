@@ -179,7 +179,7 @@ header {
     min-height: auto;
     text-align: center;
     color: #fff;
-    background-image: url(../img/header_img.png);
+    background-image: url(../img/metlife.jpg);
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -470,4 +470,16 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: #222;
+}
+
+.top_image{
+    display: block;
+    width: 30%;
+    height: 30%;
+    margin: 0 auto;
+}
+
+.image_size{
+    width: 10%;
+    height: 30%;
 }

@@ -1,4 +1,4 @@
-<?php 
+<?php
 ini_set("display_errors", on);
 error_reporting(E_ALL);
 ?>
@@ -38,10 +38,10 @@ if (version_compare(PHP_VERSION, '5.1.0', '>=')) {//PHP5.1.0以上の場合の�
 //---------------------------　必須設定　必ず設定してください　-----------------------
 
 //サイトのトップページのURL　※デフォルトでは送信完了後に「トップページへ戻る」ボタンが表示されますので
-$site_top = "http://translator.works";
+$site_top = "http://www.candc.link/";
 
 // 管理者メールアドレス ※メールを受け取るメールアドレス(複数指定する場合は「,」で区切ってください 例 $to = "aa@aa.aa,bb@bb.bb";)
-$to = "mr.translator.masaya@gmail.com";
+$to = "info@strawcorp.com";
 
 //フォームのメールアドレス入力箇所のname属性の値（name="○○"　の○○部分）
 $Email = "Email";
@@ -69,10 +69,10 @@ $Referer_check_domain = "php-factory.net";
 $userMail = 1;
 
 // Bccで送るメールアドレス(複数指定する場合は「,」で区切ってください 例 $BccMail = "aa@aa.aa,bb@bb.bb";)
-$BccMail = "";
+$BccMail = "info@strawcorp.com";
 
 // 管理者宛に送信されるメールのタイトル（件名）
-$subject = "Mr.Translator オーダーメール";
+$subject = "C&C オーダーメール";
 
 // 送信確認画面の表示(する=1, しない=0)
 $confirmDsp = 0;
@@ -83,10 +83,10 @@ $confirmDsp = 0;
 $jumpPage = 1;
 
 // 送信完了後に表示するページURL（上記で1を設定した場合のみ）※httpから始まるURLで指定ください。
-$thanksPage = "http://translator.works/thanks.html";
+$thanksPage = "http://www.candc.link/thanks.html";
 
 // 必須入力項目を設定する(する=1, しない=0)
-$requireCheck = 0;
+$requireCheck = 1;
 
 /* 必須入力項目(入力フォームで指定したname属性の値を指定してください。（上記で1を設定した場合のみ）
 値はシングルクォーテーションで囲み、複数の場合はカンマで区切ってください。フォーム側と順番を合わせると良いです。
@@ -103,22 +103,22 @@ $require = array('お名前','Email','ご注文内容');
 $remail = 0;
 
 //自動返信メールの送信者欄に表示される名前　※あなたの名前や会社名など（もし自動返信メールの送信者名が文字化けする場合ここは空にしてください）
-$refrom_name = "Mr.Translator ご注文メール";
+$refrom_name = "C&C ご注文メール";
 
 // 差出人に送信確認メールを送る場合のメールのタイトル（上記で1を設定した場合のみ）
 $re_subject = "ご注文ありがとうございました";
 
 //フォーム側の「名前」箇所のname属性の値　※自動返信メールの「○○様」の表示で使用します。
 //指定しない、または存在しない場合は、○○様と表示されないだけです。あえて無効にしてもOK
-$dsp_name = 'Mr.Translator';
+$dsp_name = 'C&C';
 
 //自動返信メールの冒頭の文言 ※日本語部分のみ変更可
 $remail_text = <<< TEXT
 
-この度はMr.Translatorへご注文頂きまして誠にありがとうございます。
+この度はC&Cへご注文頂きまして誠にありがとうございます。
 送信内容は以下になります。
 
-支払いの確認後に早速翻訳作業をさせて頂きます。
+支払いの確認後に早速施設の予約を致しますます。
 
 TEXT;
 
@@ -130,10 +130,9 @@ $mailFooterDsp = 1;
 $mailSignature = <<< FOOTER
 
 ──────────────────────
-Mr.Translator
-〒150-0022東京都渋谷区恵比寿南3-5-7 DGビル 2F Open Network Space
-E-mail:info@translator.works
-URL: http://translator.works
+株式会社ストロー
+〒150-0031 東京都渋谷区桜丘町３０−４渋谷アジアマンション202号室
+E-mail:info@strawcorp.com
 ──────────────────────
 
 FOOTER;
@@ -312,7 +311,6 @@ if(($jumpPage == 0 && $sendmail == 1) || ($jumpPage == 0 && ($confirmDsp == 0 &&
 送信ありがとうございました。<br />
 送信は正常に完了しました。<br /><br />
 <a href="<?php echo $site_top ;?>">トップページへ戻る&raquo;</a>
-</div>
 <?php copyright(); ?>
 <!--  CV率を計測する場合ここにAnalyticsコードを貼り付け -->
 </body>

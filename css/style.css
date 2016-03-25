@@ -140,8 +140,8 @@ header .header-content .header-content-inner p {
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   display: block;
-  max-width: 100%;
-  height: auto;
+  width: 200px;
+  height: 200px;
 }
 
 .img-circle {
