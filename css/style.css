@@ -180,3 +180,9 @@ textarea::selection {
 .position-right{
     text-align: right;
 }
+
+.to-top{
+    color: #ff0073;
+    margin-top: 20px;
+    display: block;
+}

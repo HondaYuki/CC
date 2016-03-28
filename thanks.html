@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="C&C">
-    <meta http-equiv="refresh"  content="1;URL=">
     <meta name="robots" content="noindex" />
 
     <title>C&C</title>
@@ -57,8 +56,21 @@
         <div class="header-content">
             <div class="header-content-inner">
                 <img src="img/candc.png" class="top_image">
-                <hr>
-                <p>ご注文ありがとうございました。<br> お支払いページへ自動的に遷移します。<br><br>自動遷移しない方は<a href="">こちら</a>から</p>
+                <p>ご注文ありがとうございました。<br>
+                   下記のボタンを押してクレジットカード情報をご入力ください。
+                </p>
+
+                <script
+                  type="text/javascript"
+                  src="https://checkout.pay.jp/"
+                  class="payjp-button"
+                  data-key="pk_live_5c25cd46c2453384ed27cd09"
+                  data-on-created="onCreated"
+                  data-text="支払う"
+                  data-submit-text="支払う"
+                  data-partial="true">
+                </script>
+                <a class="to-top" href="http://www.candc.link/">トップへ戻る</a>
             </div>
         </div>
     </header>
