@@ -115,10 +115,18 @@ $dsp_name = 'C&C';
 //自動返信メールの冒頭の文言 ※日本語部分のみ変更可
 $remail_text = <<< TEXT
 
-この度はC&Cへご注文頂きまして誠にありがとうございます。
+この度はC&Cへご注文頂きまして、誠にありがとうございます。
 送信内容は以下になります。
 
+──────────────────────
+[明細情報]
+施設予約代行料     500円
+
+──────────────────────
 支払いの確認後に早速施設の予約を致します。
+3日以内にフォームに入力していただいたメールアドレス宛にご連絡いたしますので、
+万が一3日経ってもメールが届かなかった場合は、お手数ですが再度 info@strawcorp.com にお問い合わせください。
+
 
 TEXT;
 
@@ -212,7 +220,8 @@ if(($confirmDsp == 0 || $sendmail == 1) && $empty_flag != 1){
 	$subject = "=?iso-2022-jp?B?".base64_encode(mb_convert_encoding($subject,"JIS",$encode))."?=";
 
 	mail($to,$subject,$adminBody,$header);
-	if($remail == 1) mail($post_mail,$re_subject,$userBody,$reheader);
+  if($remail == 1) 
+        mail($post_mail.','.$to,$re_subject,$userBody,$reheader);
 }
 else if($confirmDsp == 1){
 
